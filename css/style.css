@@ -1,0 +1,107 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff7f0;
+  padding-top: 75px;
+}
+
+.navbar,
+.offcanvas {
+  background-color: #604652;
+}
+.footer {
+  background-color: #604652;
+  margin-top: 60px; /* Menurunkan footer tanpa menggeser elemen lainnya */
+  padding: 20px 0; /* Tambahan agar tidak dempet di dalamnya */
+  color: white;
+}
+
+.offcanvas .nav-link {
+  color: #d29f80 !important;
+}
+.offcanvas .nav-link:hover {
+  color: #ffffff !important;
+}
+.btn-primary {
+  background-color: #97866a;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #604652;
+}
+h1,
+h2 {
+  color: #604652;
+}
+
+.hero-img {
+  width: 100%;
+  height: 85vh; /* 85% tinggi layar desktop */
+  object-fit: cover; /* isi area tanpa distorsi */
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  max-width: 80%;
+  pointer-events: none;
+}
+
+.carousel-caption,
+.footer {
+  color: white;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Awalnya elemen tersembunyi dan sedikit turun */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Saat elemen sudah terlihat dan 'menempel' */
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .hero-img {
+    height: 60vh; /* lebih kecil untuk mobile */
+  }
+}
+
+/* Gaya default untuk desktop */
+.hero-img {
+  object-fit: cover; /* Gambar mengisi area tanpa distorsi */
+  width: 100%;
+}
+
+/* Responsif untuk tablet dan mobile */
+@media (max-width: 768px) {
+  .hero-img {
+    height: 60vh; /* lebih pendek di tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-img {
+    height: 45vh; /* lebih pendek lagi di smartphone */
+  }
+}
+
+/* Tambah di bawah media query existing */
+@media (max-width: 480px) {
+  .carousel-caption h1 {
+    font-size: clamp(1rem, 5vw, 1.5rem); /* Lebih kecil dari default */
+  }
+
+  .carousel-caption p {
+    font-size: clamp(0.8rem, 3vw, 1rem); /* Lebih kecil juga */
+  }
+}
